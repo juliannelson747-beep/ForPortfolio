@@ -1,10 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Julian Nelson - GIS Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julian Nelson | GIS & Spatial Data Portfolio</title>
+  <style>
+    /* Modern Reset & Typography */
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header Section */
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .bio {
+      margin-top: 1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Projects Section */
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.75rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Map Responsive Container */
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Buttons & Badges */
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: #000;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+      color: #fff;
+    }
+
+    .tag-container {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: var(--border);
+      color: var(--text-main);
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Julian Nelson | GIS & Spatial Data Portfolio</h1>
-  <p>Welcome! Interactive web maps and Python analysis coming soon.</p>
-</body>
-</html>
+
+  <div class="container">
+    
+    <!-- Header / Intro -->
+    <header>
+      <h1>Julian Nelson</h1>
+      <p>GIS Specialist & Spatial Data Analyst</p>
+      <p class="bio">Welcome to my portfolio. Below you will find interactive ArcGIS web applications, spatial models, and Python automation workflows.</p>
+    </header>
