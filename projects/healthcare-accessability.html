@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Healthcare Accessibility Analysis | Julian Nelson</title>
+
+  <style>
+
+    /* =========================
+       Global Theme
+    ========================= */
+
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --border: #334155;
+      --success: #4ade80;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       Navigation
+    ========================= */
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+
+    /* =========================
+       Project Header
+    ========================= */
+
+    .project-header {
+      padding: 5rem 1rem 4rem;
+      text-align: center;
+    }
+
+    .project-header h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-header .subtitle {
+      color: var(--accent);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-header .intro {
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+    }
+
+
+    /* =========================
+       Tags
+    ========================= */
+
+    .tag-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background-color: var(--border);
+      color: var(--text-main);
+      font-size: 0.85rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 5px;
+    }
+
+
+    /* =========================
+       General Sections
+    ========================= */
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+
+    /* =========================
+       Cards
+    ========================= */
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+
+    /* =========================
+       Hero Image
+    ========================= */
+
+    .hero-image {
+      width: 100%;
+      max-height: 650px;
+      object-fit: contain;
+      background-color: #ffffff;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+
+    /* =========================
+       Project Images
+    ========================= */
+
+    .project-image {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .image-caption {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: -0.5rem;
+    }
+
+
+    /* =========================
+       Metrics
+    ========================= */
+
+    .metric {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .metric-number {
+      display: block;
+      color: var(--accent);
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       Workflow
+    ========================= */
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .workflow-step {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .step-number {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+
+    /* =========================
+       Results List
+    ========================= */
+
+    .results-list {
+      padding-left: 1.3rem;
+      color: var(--text-muted);
+    }
+
+    .results-list li {
+      margin-bottom: 0.8rem;
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+
+
+    /* =========================
+       Buttons
+    ========================= */
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: #000;
+      font-weight: 600;
+      padding: 0.7rem 1.3rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: var(--border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background-color: #475569;
+    }
+
+
+    /* =========================
+       Code Sample
+    ========================= */
+
+    pre {
+      background-color: #020617;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      overflow-x: auto;
+      color: #cbd5e1;
+    }
+
+    code {
+      font-family: "Courier New", monospace;
+    }
+
+
+    /* =========================
+       Footer
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       Responsive Design
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .grid,
+      .three-grid,
+      .workflow {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .project-header {
+        padding-top: 3rem;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+  <!-- =========================
+       Navigation
+  ========================== -->
+
+  <nav>
+
+    <a href="../index.html">
+      ← Julian Nelson
+    </a>
+
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#results">Results</a>
+      <a href="#documents">Documents</a>
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================
+       Project Header
+  ========================== -->
+
+  <header class="project-header">
+
+    <p class="subtitle">
+      Python GIS • Network Analysis • Spatial Modeling
+    </p>
+
+    <h1>
+      Modeling Rural Healthcare Accessibility
+    </h1>
+
+    <p class="intro">
+      An automated GIS workflow for measuring road-network travel time
+      to emergency, non-emergency, and pharmacy healthcare facilities
+      throughout Humboldt County, California.
+    </p>
+
+    <div class="tag-container">
+
+      <span class="tag">Python</span>
+      <span class="tag">OSMnx</span>
+      <span class="tag">NetworkX</span>
+      <span class="tag">GeoPandas</span>
+      <span class="tag">Rasterio</span>
+      <span class="tag">ArcGIS Pro</span>
+      <span class="tag">RStudio</span>
+      <span class="tag">GAM Regression</span>
+      <span class="tag">Census API</span>
+      <span class="tag">USGS DEM</span>
+
+    </div>
+
+    <!-- Replace with your preferred main map -->
+    <img
+      src="../images/healthcare/healthcare-overview.jpg"
+      alt="Healthcare accessibility maps for Humboldt County"
+      class="hero-image"
+    >
+
+  </header>
+
+
+
+  <!-- =========================
+       Overview
+  ========================== -->
+
+  <section id="overview">
+
+    <h2>Project Overview</h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>The Problem</h3>
+
+        <p>
+          Rural communities can experience substantially different
+          levels of healthcare accessibility because of distance,
+          transportation networks, terrain, and the geographic
+          distribution of medical facilities.
+        </p>
+
+        <p>
+          Humboldt County provides a useful case study because it
+          contains both concentrated coastal communities and large,
+          mountainous rural areas.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>The Goal</h3>
+
+        <p>
+          The goal of this project was to develop a reproducible
+          road-network analysis that measures travel time from census
+          tracts to healthcare facilities.
+        </p>
+
+        <p>
+          The resulting accessibility measurements were then evaluated
+          against demographic, transportation, and environmental
+          covariates using statistical models.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Project Statistics
+  ========================== -->
+
+  <section>
+
+    <h2>Analysis at a Glance</h2>
+
+    <div class="three-grid">
+
+      <div class="card metric">
+        <span class="metric-number">3</span>
+        <span class="metric-label">
+          Healthcare Facility Categories
+        </span>
+      </div>
+
+      <div class="card metric">
+        <span class="metric-number">35</span>
+        <span class="metric-label">
+          Census Tracts Analyzed
+        </span>
+      </div>
+
+      <div class="card metric">
+        <span class="metric-number">5</span>
+        <span class="metric-label">
+          Accessibility Covariates
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Workflow
+  ========================== -->
+
+  <section id="workflow">
+
+    <h2>Automated GIS Workflow</h2>
+
+    <p>
+      The original workflow used manually downloaded OpenStreetMap data,
+      but it was redesigned around APIs and Python automation to improve
+      processing speed, reproducibility, and network connectivity.
+    </p>
+
+    <div class="workflow">
+
+      <div class="workflow-step">
+
+        <div class="step-number">01</div>
+
+        <h3>Acquire Data</h3>
+
+        <p>
+          Download Census, road-network, demographic, and elevation
+          datasets from online data sources and APIs.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="step-number">02</div>
+
+        <h3>Build Network</h3>
+
+        <p>
+          Construct the drivable OpenStreetMap network using OSMnx and
+          prepare it for shortest-path analysis.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="step-number">03</div>
+
+        <h3>Calculate Access</h3>
+
+        <p>
+          Snap census tract centroids and healthcare facilities to
+          network nodes and calculate minimum travel time.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="step-number">04</div>
+
+        <h3>Model Results</h3>
+
+        <p>
+          Export spatial results for cartography in ArcGIS Pro and
+          statistical analysis using Generalized Additive Models in R.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Technology
+  ========================== -->
+
+  <section>
+
+    <h2>Technology & Data</h2>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>Python Geospatial Stack</h3>
+
+        <div class="tag-container" style="justify-content:left;">
+
+          <span class="tag">OSMnx</span>
+          <span class="tag">NetworkX</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">GeoPandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Rasterio</span>
+          <span class="tag">Matplotlib</span>
+
+        </div>
+
+        <p>
+          Python handled road-network construction, data processing,
+          routing, Census API requests, DEM processing, calculation of
+          covariates, and export of final GIS datasets.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>Modeling & Cartography</h3>
+
+        <div class="tag-container" style="justify-content:left;">
+
+          <span class="tag">ArcGIS Pro</span>
+          <span class="tag">RStudio</span>
+          <span class="tag">mgcv</span>
+          <span class="tag">GAM</span>
+
+        </div>
+
+        <p>
+          ArcGIS Pro was used to produce the final accessibility maps.
+          Generalized Additive Models were developed in RStudio to
+          evaluate relationships between travel time and the selected
+          covariates.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Maps
+  ========================== -->
+
+  <section>
+
+    <h2>Healthcare Accessibility Maps</h2>
+
+    <p>
+      Network travel time was calculated separately for emergency,
+      non-emergency, and pharmacy healthcare services.
+    </p>
+
+    <div class="grid">
+
+
+      <!-- Emergency Map -->
+
+      <div class="card">
+
+        <img
+          src="../images/healthcare/emergency-access.jpg"
+          alt="Emergency healthcare travel time map"
+          class="project-image"
+        >
+
+        <h3>Emergency Healthcare</h3>
+
+        <p>
+          Emergency healthcare accessibility is greatest around the
+          Eureka–Arcata corridor, while inland and mountainous census
+          tracts experience substantially longer travel times.
+        </p>
+
+      </div>
+
+
+      <!-- Non-Emergency Map -->
+
+      <div class="card">
+
+        <img
+          src="../images/healthcare/non-emergency-access.jpg"
+          alt="Non-emergency healthcare travel time map"
+          class="project-image"
+        >
+
+        <h3>Non-Emergency Healthcare</h3>
+
+        <p>
+          Non-emergency healthcare facilities are also concentrated
+          around the more densely populated coastal corridor, although
+          differences are less extreme than emergency healthcare.
+        </p>
+
+      </div>
+
+
+      <!-- Pharmacy Map -->
+
+      <div class="card">
+
+        <img
+          src="../images/healthcare/pharmacy-access.jpg"
+          alt="Pharmacy travel time map"
+          class="project-image"
+        >
+
+        <h3>Pharmacy Accessibility</h3>
+
+        <p>
+          Pharmacy accessibility produced the clearest geographic
+          separation between urban and rural areas, with remote inland
+          tracts experiencing some of the longest modeled travel times.
+        </p>
+
+      </div>
+
+
+      <!-- Workflow Image -->
+
+      <div class="card">
+
+        <img
+          src="../images/healthcare/workflow-diagram.jpg"
+          alt="Automated healthcare accessibility Python workflow"
+          class="project-image"
+        >
+
+        <h3>Automated Workflow</h3>
+
+        <p>
+          The final workflow combines road-network acquisition,
+          Census data, healthcare locations, terrain data, network
+          routing, and automated spatial outputs.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Statistical Analysis
+  ========================== -->
+
+  <section id="results">
+
+    <h2>Regression & Covariate Analysis</h2>
+
+    <div class="card">
+
+      <p>
+        Generalized Additive Models were used to test relationships
+        between healthcare travel time and five demographic,
+        transportation, and environmental variables:
+      </p>
+
+      <div class="tag-container" style="justify-content:left;">
+
+        <span class="tag">Median Household Income</span>
+        <span class="tag">% Without Vehicle</span>
+        <span class="tag">Population</span>
+        <span class="tag">Road Density</span>
+        <span class="tag">Mean Terrain Slope</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Model Performance
+  ========================== -->
+
+  <section>
+
+    <h2>Model Performance</h2>
+
+    <div class="three-grid">
+
+      <div class="card metric">
+
+        <h3>Emergency</h3>
+
+        <span class="metric-number">0.711</span>
+
+        <span class="metric-label">
+          Adjusted R²
+        </span>
+
+        <p style="margin-top:1rem;">
+          78.16% deviance explained
+        </p>
+
+      </div>
+
+
+      <div class="card metric">
+
+        <h3>Non-Emergency</h3>
+
+        <span class="metric-number">0.544</span>
+
+        <span class="metric-label">
+          Adjusted R²
+        </span>
+
+        <p style="margin-top:1rem;">
+          62.83% deviance explained
+        </p>
+
+      </div>
+
+
+      <div class="card metric">
+
+        <h3>Pharmacy</h3>
+
+        <span class="metric-number">0.889</span>
+
+        <span class="metric-label">
+          Adjusted R²
+        </span>
+
+        <p style="margin-top:1rem;">
+          91.32% deviance explained
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       GAM Figure
+  ========================== -->
+
+  <section>
+
+    <h2>Covariate Relationships</h2>
+
+    <div class="card">
+
+      <img
+        src="../images/healthcare/gam-analysis.jpg"
+        alt="Generalized Additive Model healthcare accessibility plots"
+        class="project-image"
+      >
+
+      <p>
+        Terrain slope demonstrated the strongest and most consistent
+        relationship with healthcare travel time. The relationship was
+        nonlinear, with accessibility decreasing substantially in areas
+        with steeper terrain.
+      </p>
+
+      <p>
+        Median income, population, vehicle availability, and road
+        density showed comparatively weak relationships with modeled
+        travel time within the study area.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Key Results
+  ========================== -->
+
+  <section>
+
+    <h2>Key Findings</h2>
+
+    <div class="card">
+
+      <ul class="results-list">
+
+        <li>
+          <strong>Terrain was the strongest predictor.</strong>
+          Mean terrain slope was statistically significant across all
+          three healthcare accessibility models.
+        </li>
+
+        <li>
+          <strong>The Eureka–Arcata corridor had the highest accessibility.</strong>
+          Census tracts near the primary coastal population centers
+          consistently had shorter travel times.
+        </li>
+
+        <li>
+          <strong>Rural inland areas experienced longer travel times.</strong>
+          Mountainous and sparsely populated census tracts were generally
+          less accessible by road.
+        </li>
+
+        <li>
+          <strong>Pharmacy accessibility showed the greatest geographic disparity.</strong>
+          The pharmacy model produced the strongest separation between
+          urban and rural accessibility.
+        </li>
+
+        <li>
+          <strong>Automation greatly improved the workflow.</strong>
+          Moving from manually downloaded OSM datasets to API-based
+          network construction reduced processing complexity and made
+          the analysis more reproducible.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Limitations / Future Work
+  ========================== -->
+
+  <section>
+
+    <h2>Limitations & Future Work</h2>
+
+    <div class="card">
+
+      <p>
+        The analysis was limited by the relatively small number of
+        census tracts and by the completeness of available healthcare
+        facility datasets.
+      </p>
+
+      <p>
+        Future improvements could include higher-quality healthcare
+        facility data, healthcare capacity information, validation
+        against observed travel times, and application of the automated
+        framework to additional counties.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Documents
+  ========================== -->
+
+  <section id="documents">
+
+    <h2>Project Documents</h2>
+
+    <div class="card">
+
+      <p>
+        Additional details about the workflow, methods, statistical
+        analysis, and results are available in the full project report
+        and presentation.
+      </p>
+
+      <div class="button-container">
+
+        <a
+          class="btn"
+          href="../documents/healthcare-accessibility-report.pdf"
+          target="_blank"
+          rel="noopener noreferrer">
+          View Full Report
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="../documents/healthcare-accessibility-presentation.pdf"
+          target="_blank"
+          rel="noopener noreferrer">
+          View Presentation
+        </a>
+
+        <!-- Add your GitHub Python repository later -->
+
+        <a
+          class="btn btn-secondary"
+          href="YOUR_GITHUB_PROJECT_URL"
+          target="_blank"
+          rel="noopener noreferrer">
+          View Python Code
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       Footer
+  ========================== -->
+
+  <footer>
+
+    <p>
+      &copy; 2026 Julian Nelson |
+      GIS & Spatial Data Portfolio
+    </p>
+
+  </footer>
+
+
+</div>
+
+</body>
+</html>
