@@ -3,257 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Julian Nelson, GIS Specialist and Spatial Data Analyst: GIS, remote sensing, spatial analysis, and web mapping.">
 
-  <title> Julian Nelson | GIS & Spatial Data Portfolio</title>
+  <title>Julian Nelson | GIS &amp; Spatial Data Portfolio</title>
 
-  <style>
-    /* =========================
-       Global Theme
-    ========================= */
-    :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-hover: #0284c7;
-      --border: #334155;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-
-    /* =========================
-       Header / Intro
-    ========================= */
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 3rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--text-main);
-      margin-bottom: 0.5rem;
-    }
-
-    header .subtitle {
-      font-size: 1.2rem;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .bio {
-      margin-top: 1rem;
-      color: var(--text-muted);
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-
-    /* =========================
-       Navigation
-    ========================= */
-    nav {
-      margin-top: 1.5rem;
-    }
-
-    nav a {
-      color: var(--text-main);
-      text-decoration: none;
-      margin: 0 0.75rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-
-    /* =========================
-       Sections
-    ========================= */
-    section {
-      margin-bottom: 4rem;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 0.75rem;
-    }
-
-
-    /* =========================
-       Responsive Project Grid
-    ========================= */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    @media (max-width: 700px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-
-    /* =========================
-       Cards
-    ========================= */
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-    }
-
-    .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-
-    /* =========================
-       Project Images
-    ========================= */
-    .project-image {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      margin-bottom: 1rem;
-    }
-
-
-    /* =========================
-       Interactive Map
-    ========================= */
-    .map-container {
-      position: relative;
-      width: 100%;
-      height: 500px;
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-
-    /* =========================
-       Buttons
-    ========================= */
-    .btn {
-      display: inline-block;
-      background-color: var(--accent);
-      color: #000;
-      font-weight: 600;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      margin-right: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .btn:hover {
-      background-color: var(--accent-hover);
-      color: #fff;
-    }
-
-
-    /* =========================
-       Tags
-    ========================= */
-    .tag-container {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      background: var(--border);
-      color: var(--text-main);
-      font-size: 0.8rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-    }
-
-
-    /* =========================
-       Contact Links
-    ========================= */
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-
-    /* =========================
-       Footer
-    ========================= */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 
 <body>
+
+  <a class="skip-link" href="#projects">Skip to content</a>
 
   <div class="container">
 
@@ -264,7 +24,7 @@
       <h1>Julian Nelson</h1>
 
       <p class="subtitle">
-        GIS Specialist & Spatial Data Analyst
+        GIS Specialist &amp; Spatial Data Analyst
       </p>
 
       <p class="bio">
@@ -272,209 +32,252 @@
         in GIS, remote sensing, spatial analysis, web mapping, and
         geospatial data processing.
       </p>
-      
-<div class="header-contact">
-  <a href="mailto:juliannelson747@gmail.com">juliannelson747@gmail.com</a>
-  <span class="divider">|</span>
-  <a href="tel:+17075551234">(707) 362-6741</a>
-</div>
 
-</nav>
+      <div class="header-contact">
+        <a href="mailto:juliannelson747@gmail.com">juliannelson747@gmail.com</a>
+        <span class="divider">|</span>
+        <a href="tel:+17073626741">(707) 362-6741</a>
+      </div>
 
-      
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </nav>
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="capstone.html">Capstone</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
 
-    <!-- =========================
-         Featured Projects
-    ========================== -->
-    <section id="projects">
+    <main>
 
-      <h2>Featured Projects</h2>
+      <!-- =========================
+           Featured Projects
+      ========================== -->
+      <section id="projects">
 
-      <div class="grid">
+        <h2>Featured Projects</h2>
 
-        <!-- Project 1 -->
-       <div class="card">
+        <div class="grid">
 
-  <h3>Rural Healthcare Accessibility Analysis</h3>
+          <!-- Project 1 -->
+          <div class="card">
 
-  <div class="tag-container">
-    <span class="tag">Python</span>
-    <span class="tag">OSMnx</span>
-    <span class="tag">Network Analysis</span>
-    <span class="tag">ArcGIS Pro</span>
-    <span class="tag">RStudio</span>
-  </div>
+            <h3>Rural Healthcare Accessibility Analysis</h3>
 
-  <p>
-    An automated road-network analysis measuring travel-time
-    accessibility to healthcare services across Humboldt County,
-    with demographic and environmental covariate modeling.
-  </p>
+            <p class="meta">
+              Python &middot; OSMnx &middot; Network Analysis &middot; ArcGIS Pro &middot; RStudio
+            </p>
 
-  <a
-    class="btn"
-    href="projects/healthcare-accessibility.html">
-    View Project
-  </a>
+            <p>
+              An automated road-network analysis measuring travel-time
+              accessibility to healthcare services across Humboldt County,
+              with demographic and environmental covariate modeling.
+            </p>
 
-</div>
+            <a class="btn" href="projects/healthcare-accessibility.html">
+              View Project
+            </a>
 
-      <div class="card">
+          </div>
 
-  <h3>Test</h3>
+          <!-- Project template: copy this block, fill it in, and uncomment.
+          <div class="card">
 
-  <div class="tag-container">
-    <span class="tag">Test</span>
-  </div>
+            <img class="project-image" src="images/project-name.jpg" alt="Describe the map or figure">
 
-  <p>
-    To be filled
-  </p>
+            <h3>Project Title</h3>
 
-  <a
-    class="btn"
-    href="projects/*****.html">
-    View Project
-  </a>
+            <p class="meta">Tool 1 &middot; Tool 2 &middot; Tool 3</p>
 
-</div>
-        
-    <!-- =========================
-         About Me
-    ========================== -->
-    <section id="about">
+            <p>
+              One or two sentences on the question, method, and result.
+            </p>
 
-      <h2>About Me</h2>
+            <a class="btn" href="projects/project-name.html">
+              View Project
+            </a>
 
-      <div class="card">
-
-        <p>
-          I am a GIS and geospatial science student interested in spatial
-          analysis, remote sensing, environmental applications, and web
-          GIS. My work focuses on using geographic data to better
-          understand real-world environmental and spatial problems.
-        </p>
-
-        <p>
-          I am especially interested in combining GIS, remote sensing,
-          cartography, and data analysis to communicate geographic
-          information clearly and effectively.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         Skills
-    ========================== -->
-    <section id="skills">
-
-      <h2>Skills</h2>
-
-      <div class="card">
-
-        <div class="tag-container">
-
-          <span class="tag">ArcGIS Pro</span>
-          <span class="tag">ArcGIS Online</span>
-          <span class="tag">QGIS</span>
-          <span class="tag">Remote Sensing</span>
-          <span class="tag">Spatial Analysis</span>
-          <span class="tag">Cartography</span>
-          <span class="tag">Python</span>
-          <span class="tag">ArcPy</span>
-          <span class="tag">SQL</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">Geospatial Data Management</span>
+          </div>
+          -->
 
         </div>
 
-      </div>
+      </section>
 
-    </section>
 
-<!-- =========================
-     Resume
-========================== -->
-<section id="resume">
+      <!-- =========================
+           Capstone
+      ========================== -->
+      <section id="capstone">
 
-  <h2>Resume</h2>
+        <h2>Capstone Project</h2>
 
-  <div class="card">
+        <div class="card">
 
-    <p>
-      View or download my general resume for a summary of my
-      education, experience, and technical skills.
-    </p>
+          <h3>[Capstone Project Title]</h3>
 
-    <a
-      class="btn"
-      href="documents/ResumeJN.pdf"
-      target="_blank"
-      rel="noopener noreferrer">
-      View Resume (PDF)
-    </a>
+          <p class="meta">[Tool 1] &middot; [Tool 2] &middot; [Tool 3]</p>
 
-    <a
-      class="btn"
-      href="documents/ResumeJN.pdf"
-      download>
-      Download
-    </a>
+          <p>
+            [One or two sentences summarizing the capstone.] The full
+            write-up, data, maps, and deliverables live on one dedicated page.
+          </p>
 
-  </div>
-
-</section>
-
-    <!-- =========================
-         Contact
-    ========================== -->
-    <section id="contact">
-
-      <h2>Contact</h2>
-
-      <div class="card">
-
-        <p>
-          Feel free to contact me or explore more of my GIS and
-          geospatial work.
-        </p>
-
-        <div class="contact-buttons">
-
-          <a
-            class="btn"
-            href="mailto:juliannelson747@gmail.com"
-          >
-            Email Me
+          <a class="btn" href="capstone.html">
+            View Capstone
           </a>
 
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           About Me
+      ========================== -->
+      <section id="about">
+
+        <h2>About Me</h2>
+
+        <div class="card">
+
+          <p>
+            I am a GIS and geospatial science student interested in spatial
+            analysis, remote sensing, environmental applications, and web
+            GIS. My work focuses on using geographic data to better
+            understand real-world environmental and spatial problems.
+          </p>
+
+          <p>
+            I am especially interested in combining GIS, remote sensing,
+            cartography, and data analysis to communicate geographic
+            information clearly and effectively.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           Skills (plain grouped lists, not buttons)
+      ========================== -->
+      <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="card">
+
+          <div class="skills-grid">
+
+            <div>
+              <h3>GIS &amp; Mapping</h3>
+              <ul>
+                <li>ArcGIS Pro</li>
+                <li>ArcGIS Online</li>
+                <li>QGIS</li>
+                <li>Cartography</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Analysis</h3>
+              <ul>
+                <li>Remote Sensing</li>
+                <li>Spatial Analysis</li>
+                <li>Geospatial Data Management</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Programming &amp; Web</h3>
+              <ul>
+                <li>Python</li>
+                <li>ArcPy</li>
+                <li>SQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           Resume
+      ========================== -->
+      <section id="resume">
+
+        <h2>Resume</h2>
+
+        <div class="card">
+
+          <p>
+            View or download my general resume for a summary of my
+            education, experience, and technical skills.
+          </p>
+
           <a
             class="btn"
-            href="https://github.com/juliannelson747-beep"
+            href="documents/ResumeJN.pdf"
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
+            rel="noopener noreferrer">
+            View Resume (PDF)
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="documents/ResumeJN.pdf"
+            download>
+            Download
           </a>
 
         </div>
 
-      </div>
+      </section>
 
-    </section>
+
+      <!-- =========================
+           Contact
+      ========================== -->
+      <section id="contact">
+
+        <h2>Contact</h2>
+
+        <div class="card">
+
+          <p>
+            Feel free to contact me or explore more of my GIS and
+            geospatial work.
+          </p>
+
+          <div class="contact-buttons">
+
+            <a class="btn" href="mailto:juliannelson747@gmail.com">
+              Email Me
+            </a>
+
+            <a
+              class="btn btn-outline"
+              href="https://github.com/juliannelson747-beep"
+              target="_blank"
+              rel="noopener noreferrer">
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
 
 
     <!-- =========================
