@@ -3,15 +3,15 @@
    (all text/background pairs are WCAG AA or better)
 ========================= */
 :root {
-  --bg-color: #ffffff;
-  --surface: #f2f8f4;
+  --bg-color: #eceae2;       /* warm off-white */
+  --surface: #f8f7f2;        /* cards: slightly lighter than the page */
   --text-main: #111c16;      /* ~17:1 on white */
   --text-muted: #33433a;     /* ~10:1 on white */
   --accent: #166534;         /* ~7:1 on white; white text on it ~7:1 */
   --accent-hover: #14532d;
   --accent-light: #bbf7d0;   /* used only on dark green header */
   --header-bg: #14532d;
-  --border: #b9d4c2;
+  --border: #b5c9ba;
 }
 
 * {
